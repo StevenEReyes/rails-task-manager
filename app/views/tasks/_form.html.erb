@@ -1,0 +1,15 @@
+<%= form_with model: task do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.label :details %>
+  <%= form.text_field :details %>
+  <% if task.id %>
+    <%= form.check_box :completed %>
+    <%= form.label :completed, "Completed" %>
+  <% end %>
+  <% if task.id %>
+    <%= form.submit "Edit Task" %>
+    <% else %>
+    <%= form.submit "Create Task" %>
+    <% end %>
+<% end %>
